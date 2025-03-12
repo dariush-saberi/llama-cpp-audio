@@ -1957,6 +1957,8 @@ class Llama:
         logit_bias: Optional[Dict[int, float]] = None,
         logprobs: Optional[bool] = None,
         top_logprobs: Optional[int] = None,
+        voice: Optional[str] = "af_heart",
+        language: Optional[str] = "a",
     ) -> Union[
         CreateChatCompletionResponse, Iterator[CreateChatCompletionStreamResponse]
     ]:
