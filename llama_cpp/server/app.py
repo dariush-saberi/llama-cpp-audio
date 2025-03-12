@@ -48,8 +48,6 @@ import base64
 import soundfile as sf
 from io import BytesIO
 
-pipeline = KPipeline(lang_code='a')
-
 router = APIRouter(route_class=RouteErrorHandler)
 
 _server_settings: Optional[ServerSettings] = None
@@ -499,6 +497,9 @@ async def create_chat_completion(
 
     # Get voice parameter from request
     voice_name = body.voice or "af_heart"
+    lang_code = body.language or "a"
+
+    pipeline = KPipeline(lang_code=lang_code)
     
     # handle streaming request
     if kwargs.get("stream", False):
