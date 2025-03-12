@@ -498,7 +498,7 @@ async def create_chat_completion(
     kwargs = body.model_dump(exclude=exclude)
 
     # Get voice parameter from request
-    voice_name = body.voice or "heart"
+    voice_name = body.voice or "af_heart"
     
     # handle streaming request
     if kwargs.get("stream", False):
