@@ -536,7 +536,7 @@ async def create_chat_completion(
         print(f"Generated Response: {result}")  # Log the response
         text = result['choices'][0]['message']['content']
         generator = pipeline(
-            text.replace('\n\n'," "), voice='af_heart', # <= change voice here
+            text.replace('\n\n'," "), voice=voice_name, # <= change voice here
             speed=1, split_pattern=r'\n+'
         )
         # Convert the generated audio files to base64 and append them together and append to the response as "audio"
