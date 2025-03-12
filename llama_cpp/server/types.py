@@ -198,7 +198,7 @@ class CreateChatCompletionRequest(BaseModel):
     )
 
     voice: Optional[str] = Field(default="af_heart", description="The voice to use for text-to-speech responses.")
-    langauge: Optional[str] = Field(default="a", description="The language to use for text-to-speech responses.")
+    language: Optional[str] = Field(default="a", description="The language to use for text-to-speech responses.")
 
     functions: Optional[List[llama_cpp.ChatCompletionFunction]] = Field(
         default=None,
