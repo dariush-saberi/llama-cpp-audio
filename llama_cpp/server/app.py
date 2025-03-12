@@ -497,6 +497,9 @@ async def create_chat_completion(
     }
     kwargs = body.model_dump(exclude=exclude)
 
+    # Get voice parameter from request
+    voice_name = body.voice or "heart"
+    
     # handle streaming request
     if kwargs.get("stream", False):
         send_chan, recv_chan = anyio.create_memory_object_stream(10)
