@@ -118,6 +118,8 @@ class CreateCompletionRequest(BaseModel):
         default=16, ge=0, description="The maximum number of tokens to generate."
     )
     voice: Optional[str] = Field(default="af_heart", description="The voice to use for text-to-speech responses.")
+    language: Optional[str] = Field(default="a", description="The language to use for text-to-speech responses.")
+    
     min_tokens: int = min_tokens_field
     temperature: float = temperature_field
     top_p: float = top_p_field
